@@ -41,6 +41,8 @@ class TimeAgo {
      * This method is triggered before rendering the component
      */
     init() {
+        this.timeFormat = this.inputs.getProp("time-format");
+
         this.timeInSeconds = this.inputs.getOption("timestamp");
         this.displayedTime = timeago.format(this.timeInSeconds * 1000, Config.get('app.localeCode'));
 
